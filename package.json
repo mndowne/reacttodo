@@ -1,10 +1,12 @@
 {
   "name": "reacttodo",
   "version": "1.0.0",
-  "description": "\"netninja tutorial",
+  "description": "netninja tutorial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build",
+    "build": "webpack -d && webpack-dev-server --content-base src/ --inline --hot --port 1234"
   },
   "repository": {
     "type": "git",
