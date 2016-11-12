@@ -13,32 +13,37 @@ var TodoComponent = React.createClass({
     var todos = this.state.todos;
     todos = todos.map(function(item,index){
       return (
-        <li>{item}!</li>
+      <TodoItem item={item} key={index}/>
        );
+
     });
 
     return (
-      <div>
-        <p>The busiest people have the most liesure...</p>
-	<p>{this.state.age}</p>
-	<ul>
-	  {todos}
-	</ul>
+      <div id="todo-list">
+        <p>The busiest people have the most leisure...</p>
+	<ul>{todos}</ul>
       </div>
     );
   }//render
 });
 
+//Create TodoItem component
 
+var TodoItem = React.createClass({
+  render: function(){
+    return(
+      <li>
+        <div className="todo-item">
+	  <span className="item-name">{this.props.item}</span>
+	</div>
+      </li>
+    );
+  }
+});
 
-var myBeans = {
-  name: "great northern",
-  smellFactor: "Extreme pong",
-  price: "3.50"
-  };
 
 //put component into html page
 ReactDOM.render(
-  <TodoComponent mssg="I like beans" beans={myBeans} />,
+  <TodoComponent />,
   document.getElementById('todo-wrapper')
 );
