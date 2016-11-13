@@ -70,16 +70,11 @@
 	
 	    return React.createElement(
 	      'div',
-	      null,
+	      { id: 'todo-list' },
 	      React.createElement(
 	        'p',
 	        null,
-	        'The busiest people have the most liesure...'
-	      ),
-	      React.createElement(
-	        'p',
-	        null,
-	        this.state.age
+	        'The busiest people have the most leisure...'
 	      ),
 	      React.createElement(
 	        'ul',
@@ -113,7 +108,7 @@
 	});
 	
 	//put component into html page
-	ReactDOM.render(React.createElement(TodoComponent, { mssg: 'I like beans', beans: myBeans }), document.getElementById('todo-wrapper'));
+	ReactDOM.render(React.createElement(TodoComponent, null), document.getElementById('todo-wrapper'));
 
 /***/ },
 /* 1 */
